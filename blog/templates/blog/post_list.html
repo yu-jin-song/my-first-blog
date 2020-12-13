@@ -7,10 +7,12 @@
 			<h1><a href="">Yujin's blog</a></h1>
 		</div>
 
-		<div>
-			<p>published: 13.12.2020, 15:33</p>
-			<h2><a href="">My first post</a></h2>
-			<p>눈누난나</p>
-		</div>
+			{% for post in posts %}
+				<div>
+					<p>published: {{ post.published_date }}</p>
+					<h1><a href="">{{ post.title }}</a></h1>
+					<p>{{ post.text|linebreaksbr }}</p>
+				</div>
+			{% endfor %}
 	</body>
 </html>
